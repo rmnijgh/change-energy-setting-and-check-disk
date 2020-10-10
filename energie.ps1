@@ -5,8 +5,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy AllSigned
 
 #log file chkdsk
-New-Item c:\sec.txt -type file
-$file = "c:\sec.tx"
+$file = New-Item .\sec.txt -type file
 
 #high performance
 Get-WmiObject -Class Win32_PowerPlan -Namespace root\cimv2\power -Filter "ElementName= 'High Performance'" | Invoke-WmiMethod -Name Activate
